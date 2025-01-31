@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Boutique</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <h2>Ahmed Boutique</h2>
+            <ul>
+                <li><a href="#" data-target="add-article">Add Articles</a></li>
+                <li><a href="#" data-target="sell-article">Sell Articles</a></li>
+                <li><a href="#" data-target="customers">Customers</a></li>
+                <li><a href="#" data-target="profits">Profit/Loss</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- Add Articles Section -->
+            <section id="add-article" class="section active">
+                <h2>Add Articles</h2>
+                <form id="article-form">
+                    <label for="article-name">Article Name:</label>
+                    <input type="text" id="article-name" required>
+
+                    <label for="article-cost">Article Cost:</label>
+                    <input type="number" id="article-cost" required>
+
+                    <label for="article-quantity">Quantity:</label>
+                    <input type="number" id="article-quantity" required>
+
+                    <label for="article-image">Article Image:</label>
+                    <input type="file" id="article-image" accept="image/*" required>
+
+                    <button type="submit">Add Article</button>
+                </form>
+                <div id="article-list">
+                    <h3>Articles</h3>
+                    <div class="article-container"></div>
+                </div>
+            </section>
+
+            <!-- Sell Articles Section -->
+            <section id="sell-article" class="section">
+                <h2>Sell Articles</h2>
+                <form id="sell-form">
+                    <label for="article-select">Select Article:</label>
+                    <select id="article-select" required></select>
+
+                    <label for="sell-quantity">Quantity to Sell:</label>
+                    <input type="number" id="sell-quantity" required>
+
+                    <label for="customer-select">Select Customer:</label>
+                    <select id="customer-select" required></select>
+
+                    <label for="sell-price">Selling Price:</label>
+                    <input type="number" id="sell-price" required>
+
+                    <button type="submit">Sell Article</button>
+                </form>
+                <div id="sales-list">
+                    <h3>Sales</h3>
+                    <ul></ul>
+                </div>
+            </section>
+
+            <!-- Customers Section -->
+            <section id="customers" class="section">
+                <h2>Customers</h2>
+                <form id="customer-form">
+                    <label for="customer-name">Customer Name:</label>
+                    <input type="text" id="customer-name" required>
+
+                    <button type="submit">Add Customer</button>
+                </form>
+                <div id="customer-list">
+                    <h3>Customer List</h3>
+                    <div class="customer-cards"></div>
+                </div>
+            </section>
+
+            <!-- Profit/Loss Section -->
+            <section id="profits" class="section">
+                <h2>Profit/Loss</h2>
+                <div id="profit-loss-summary">
+                    <h3>Summary</h3>
+                    <p>Total Profit/Loss: <span id="total-profit-loss">₨0</span></p>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
